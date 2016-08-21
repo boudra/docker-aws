@@ -14,4 +14,4 @@ RUN apt-get update -q \
 RUN curl -sSL https://get.docker.com/ | sh
 RUN pip install awscli
 
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT [ "/bin/bash" ]
