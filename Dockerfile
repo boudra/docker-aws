@@ -1,4 +1,4 @@
-FROM debian:8.4
+FROM ubuntu:14.04
 
 MAINTAINER Mohamed Boudra <mohamed@boudra.me>
 
@@ -13,5 +13,3 @@ RUN apt-get update -q \
 
 RUN curl -sSL https://get.docker.com/ | sh
 RUN pip install awscli
-
-ENTRYPOINT [ "/bin/bash" ]
