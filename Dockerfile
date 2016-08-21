@@ -1,15 +1,11 @@
-FROM ubuntu:14.04
+FROM debian:8.4
 
 MAINTAINER Mohamed Boudra <mohamed@boudra.me>
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV COMPOSE_VERSION 1.8
 
 RUN apt-get update -q \
-	&& apt-get install -y -q --no-install-recommends curl ca-certificates python-pip \
-	&& curl -o /usr/local/bin/docker-compose -L \
-		"https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-Linux-x86_64" \
-	&& chmod +x /usr/local/bin/docker-compose
+	&& apt-get install -y -q --no-install-recommends curl ca-certificates python-pip
 
 RUN curl -sSL https://get.docker.com/ | sh
-RUN pip install awscli
+RUN pip install -U awscli docker-compose
